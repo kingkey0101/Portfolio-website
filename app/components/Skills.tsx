@@ -30,9 +30,14 @@ const Skills = () => {
               transition={{ ...cardMotion.transition, delay: 0.05 * index }}
               className="relative rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 to-slate-950 p-6 shadow-lg shadow-slate-950/30 overflow-hidden"
             >
-              <div className="absolute inset-0 opacity-40 bg-[radial-gradient(90%_60%_at_20%_20%,rgba(59,130,246,0.12),transparent),radial-gradient(90%_60%_at_80%_0%,rgba(6,182,212,0.1),transparent)]" aria-hidden />
+              <div
+                className="absolute inset-0 opacity-40 bg-[radial-gradient(90%_60%_at_20%_20%,rgba(59,130,246,0.12),transparent),radial-gradient(90%_60%_at_80%_0%,rgba(6,182,212,0.1),transparent)]"
+                aria-hidden
+              />
               <div className="relative flex items-center justify-between mb-4">
-                <h3 className={`text-xl font-semibold ${group.accent}`}>{group.label}</h3>
+                <h3 className={`text-xl font-semibold ${group.accent}`}>
+                  {group.label}
+                </h3>
                 <span className="h-1.5 w-12 rounded-full bg-gradient-to-r from-blue-400 to-emerald-300" />
               </div>
               <ul className="relative space-y-3 text-slate-200">

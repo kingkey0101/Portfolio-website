@@ -11,9 +11,18 @@ const Hero = () => {
       className="relative overflow-hidden pt-28 pb-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
     >
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-32 -left-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl" aria-hidden />
-        <div className="absolute top-0 right-10 h-72 w-72 rounded-full bg-cyan-400/15 blur-[120px]" aria-hidden />
-        <div className="absolute inset-x-0 bottom-[-220px] h-[320px] bg-[radial-gradient(120%_60%_at_50%_50%,rgba(59,130,246,0.12),rgba(6,182,212,0.08),transparent)]" aria-hidden />
+        <div
+          className="absolute -top-32 -left-20 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"
+          aria-hidden
+        />
+        <div
+          className="absolute top-0 right-10 h-72 w-72 rounded-full bg-cyan-400/15 blur-[120px]"
+          aria-hidden
+        />
+        <div
+          className="absolute inset-x-0 bottom-[-220px] h-[320px] bg-[radial-gradient(120%_60%_at_50%_50%,rgba(59,130,246,0.12),rgba(6,182,212,0.08),transparent)]"
+          aria-hidden
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative grid gap-12 lg:grid-cols-[1.2fr,0.8fr] items-center">
@@ -27,14 +36,18 @@ const Hero = () => {
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             Actively seeking remote developer roles.
           </div>
-                        {/* Bio */}
+          {/* Bio */}
           <div className="space-y-5">
-            <p className="uppercase tracking-[0.3em] text-xs text-slate-400">Frontend Developer</p>
+            <p className="uppercase tracking-[0.3em] text-xs text-slate-400">
+              Frontend Developer
+            </p>
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.05] text-white">
-              Sharp, performant web experiences built with Next.js, React, TypeScript, and a clean JavaScript stack.
+              Sharp, performant web experiences built with Next.js, React,
+              TypeScript, and a clean JavaScript stack.
             </h1>
             <p className="text-lg text-slate-300 max-w-2xl">
-              I build fast, resilient user experiences with thoughtful design — ready to contribute from day one in my first developer role
+              I build fast, resilient user experiences with thoughtful design —
+              ready to contribute from day one in my first developer role
             </p>
           </div>
 
@@ -63,12 +76,14 @@ const Hero = () => {
               className="rounded-xl border border-slate-800/80 px-8 py-3 text-base font-semibold text-slate-100 hover:border-cyan-400/80 transition bg-slate-900/60"
             >
               Let’s Connect
-            </Link>            <Link
+            </Link>{" "}
+            <Link
               href="/about"
               className="rounded-xl border border-slate-700/60 px-8 py-3 text-base font-semibold text-slate-200 hover:border-blue-400/60 hover:text-blue-300 transition bg-slate-900/40"
             >
               More about me
-            </Link>          </div>
+            </Link>{" "}
+          </div>
         </motion.div>
 
         <motion.div
@@ -77,10 +92,16 @@ const Hero = () => {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           className="relative"
         >
-          <div className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-emerald-400/10 blur-3xl" aria-hidden />
+          <div
+            className="absolute -inset-6 rounded-[32px] bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-emerald-400/10 blur-3xl"
+            aria-hidden
+          />
 
           <div className="relative rounded-3xl border border-slate-800 bg-slate-900/60 backdrop-blur-xl p-8 shadow-2xl shadow-blue-500/15 overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(6,182,212,0.08),transparent_35%)]" aria-hidden />
+            <div
+              className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(6,182,212,0.08),transparent_35%)]"
+              aria-hidden
+            />
             <div className="relative grid grid-cols-2 gap-4">
               {heroStats.map((stat) => (
                 <div
@@ -88,16 +109,29 @@ const Hero = () => {
                   className="rounded-2xl border border-slate-800/70 bg-slate-950/70 p-4 shadow-inner shadow-slate-900/40"
                 >
                   <p className="text-sm text-slate-400">{stat.label}</p>
-                  <p className="text-3xl font-bold text-blue-200">{stat.value}</p>
-                  {stat.helper ? <p className="text-xs text-slate-500 mt-1">{stat.helper}</p> : null}
+                  <p className="text-3xl font-bold text-blue-200">
+                    {stat.value}
+                  </p>
+                  {stat.helper ? (
+                    <p className="text-xs text-slate-500 mt-1">{stat.helper}</p>
+                  ) : null}
                 </div>
               ))}
             </div>
 
             <div className="mt-8 rounded-2xl border border-blue-500/30 bg-gradient-to-r from-blue-500/10 via-slate-900 to-cyan-400/10 p-6 flex flex-col gap-3">
-              <p className="text-sm uppercase tracking-[0.2em] text-blue-200">Built for fast moving teams</p>
+              <p className="text-sm uppercase tracking-[0.2em] text-blue-200">
+                Built for fast moving teams
+              </p>
               <div className="flex flex-wrap gap-2">
-                {["Clean Code", "Component Architecture", "Automation", "Figma To Code", "Accessible UI", "Linting & Formatting"].map((item) => (
+                {[
+                  "Clean Code",
+                  "Component Architecture",
+                  "Automation",
+                  "Figma To Code",
+                  "Accessible UI",
+                  "Linting & Formatting",
+                ].map((item) => (
                   <span
                     key={item}
                     className="px-3 py-1.5 rounded-lg bg-slate-950/60 border border-slate-800 text-sm text-slate-200 shadow-sm shadow-blue-500/10"
