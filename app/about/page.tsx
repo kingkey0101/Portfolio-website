@@ -10,11 +10,25 @@ const AboutPage = () => {
     "React",
     "Next.js",
     "TypeScript",
-    "TailwindCSS",
     "JavaScript",
-    "Node.js",
-    "Express",
+    "TailwindCSS",
+    "GitHub",
     "Git",
+    "Firebase",
+  ];
+
+  const education: Array<{
+    title: string;
+    institution: string;
+    date: string;
+    url?: string;
+  }> = [
+    {
+      title: "Frontend Developer Bootcamp",
+      institution: "David Brag / FES Institute",
+      date: "2025",
+      url: "/cert.pdf",
+    },
   ];
 
   return (
@@ -34,7 +48,9 @@ const AboutPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <h1 className="text-5xl md:text-6xl font-bold mb-12 text-center">More about Me</h1>
+              <h1 className="text-5xl md:text-6xl font-bold mb-12 text-center">
+                More about Me
+              </h1>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
                 {/* Photo */}
@@ -52,14 +68,22 @@ const AboutPage = () => {
                 {/* Bio & Skills */}
                 <div className="space-y-6">
                   <div>
-                    <h2 className="text-3xl font-bold mb-4 text-blue-400">Frontend Developer</h2>
+                    <h2 className="text-3xl font-bold mb-4 text-blue-400">
+                      Frontend Developer
+                    </h2>
                     <p className="text-lg text-slate-300 leading-relaxed">
-                      I'm a passionate frontend developer dedicated to building beautiful, performant web experiences. With expertise in React and Next.js, I create modern applications that users love. I'm detail-oriented, always learning, and committed to writing clean, maintainable code.
+                      Frontend developer focused on building fast, intuitive,
+                      and accessible web experiences. I work with React and
+                      Next.js to turn designs into clean, modern interfaces, and
+                      I’m committed to writing maintainable code and
+                      continuously leveling up my craft.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-semibold mb-4 text-cyan-400">Core Skills</h3>
+                    <h3 className="text-2xl font-semibold mb-4 text-cyan-400">
+                      Core Skills
+                    </h3>
                     <div className="flex flex-wrap gap-3">
                       {skills.map((skill) => (
                         <span
@@ -76,13 +100,63 @@ const AboutPage = () => {
 
               {/* Extended Bio */}
               <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-8 space-y-4">
-                <h2 className="text-2xl font-bold text-blue-400 mb-4">My Journey</h2>
+                <h2 className="text-2xl font-bold text-blue-400 mb-4">
+                  My Journey
+                </h2>
                 <p className="text-slate-300 leading-relaxed">
-                  I started my development journey with a passion for creating intuitive, user-friendly interfaces. Over time, I've honed my skills in modern web technologies and best practices. I'm constantly exploring new tools and frameworks to stay at the forefront of web development.
+                  I spent over a decade as a chef before pursuing my
+                  long‑standing passion for coding. That background taught me
+                  discipline, timing, and an obsession with detail — all of
+                  which now shape how I build clean, intuitive interfaces.
+                  Earning my frontend bootcamp certification only deepened my
+                  commitment to keep learning and growing in the field
                 </p>
                 <p className="text-slate-300 leading-relaxed">
-                  When I'm not coding, I'm exploring new design patterns, contributing to open-source projects, or building side projects to experiment with emerging technologies. I believe in continuous learning and delivering exceptional value to every project I work on.
+                  When I’m not coding, I’m studying Cracking the Coding
+                  Interview and Eloquent JavaScript to sharpen my fundamentals —
+                  or smoking brisket. I’m also preparing to pursue a bachelor’s
+                  degree in computer science to continue growing as an engineer.
                 </p>
+              </div>
+              {/* Education */}
+              <div className="mt-12 bg-slate-900/50 border border-slate-800 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-cyan-400 mb-6">
+                  Education & Certifications
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {education.length > 0 ? (
+                    education.map((item) => (
+                      <div
+                        key={`${item.title}-${item.institution}-${item.date}`}
+                        className="group bg-slate-950/40 border border-slate-800 rounded-xl p-6 flex items-start justify-between hover:border-blue-500/40 hover:bg-slate-950/60 transition"
+                      >
+                        <div className="space-y-1">
+                          <p className="text-lg font-semibold text-white">
+                            {item.title}
+                          </p>
+                          <p className="text-slate-400">{item.institution}</p>
+                          <p className="text-slate-500">
+                            {item.date}
+                          </p>
+                        </div>
+                        {item.url ? (
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-blue-400 hover:text-blue-300 underline ml-6 whitespace-nowrap"
+                          >
+                            View
+                          </a>
+                        ) : null}
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-slate-400">
+                      Add your education and certificates here.
+                    </p>
+                  )}
+                </div>
               </div>
             </motion.div>
           </div>

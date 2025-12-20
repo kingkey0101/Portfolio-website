@@ -7,8 +7,12 @@ const Footer = () => {
     <footer className="bg-slate-950 border-t border-slate-800 py-10 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-center md:text-left">
-          <p className="text-lg font-semibold text-white">Available for select projects</p>
-          <p className="text-slate-400">Let’s build a polished, performant product.</p>
+          <p className="text-lg font-semibold text-white">
+            Available for remote developer roles
+          </p>
+          <p className="text-slate-400">
+            Let’s build something fast, clean, and intentional.
+          </p>
         </div>
 
         <div className="flex items-center gap-3">
@@ -27,7 +31,7 @@ const Footer = () => {
         </div>
 
         <p className="text-slate-500 text-sm text-center md:text-right">
-          © 2025 Frontend Developer. Built with Next.js.
+          © 2025 Keylan King. Built with Next.js.
         </p>
       </div>
     </footer>
