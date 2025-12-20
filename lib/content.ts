@@ -83,7 +83,7 @@ export const projects: Project[] = [
         impact: "Built a fast, intuitive bill‑splitting interface that reduces user friction and improves clarity, fully responsive, accessible UI optimized for mobile and desktop ",
         tech: ["Next.js", "Convex", "Clerk", "Shadcn/ui", "ChartJS"],
         image:
-            "/projects/splitr.png",
+            "/projects/SplitR.png",
         alt: "SplitR logo",
         live: "https://split-r.vercel.app/",
         code: "https://github.com/kingkey0101/SplitR",

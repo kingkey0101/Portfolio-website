@@ -65,7 +65,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4">
             <Link
               href="#projects"
-              className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-500 via-cyan-400 to-emerald-300 px-[1px] py-[1px]"
+              className="group relative overflow-hidden rounded-xl bg-linear-to-r from-blue-500 via-cyan-400 to-emerald-300 px-[1px] py-[1px]"
             >
               <span className="block rounded-[0.72rem] bg-slate-950 px-8 py-3 text-base font-semibold text-white transition group-hover:bg-slate-900">
                 View projects
@@ -119,7 +119,7 @@ const Hero = () => {
               ))}
             </div>
 
-            <div className="mt-8 rounded-2xl border border-blue-500/30 bg-gradient-to-r from-blue-500/10 via-slate-900 to-cyan-400/10 p-6 flex flex-col gap-3">
+            <div className="mt-8 rounded-2xl border border-blue-500/30 bg-linear-to-r from-blue-500/10 via-slate-900 to-cyan-400/10 p-6 flex flex-col gap-3">
               <p className="text-sm uppercase tracking-[0.2em] text-blue-200">
                 Built for fast moving teams
               </p>
