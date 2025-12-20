@@ -43,7 +43,7 @@ const Navigation = () => {
         </div>
 
         <Link
-          href=""
+          href="/resume.pdf"
           target="blank"
           className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 bg-linear-to-r from-blue-400 via-cyan-300 to-emerald-300 px-4 py-2 rounded-lg shadow-lg shadow-blue-500/25 border border-white/20"
         >
