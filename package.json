@@ -6,21 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run"
   },
   "dependencies": {
+    "framer-motion": "^11.9.0",
+    "lucide-react": "^0.562.0",
     "next": "16.1.0",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6",
+    "@testing-library/react": "^16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.0",
+    "jsdom": "^25",
     "tailwindcss": "^4",
+    "vitest": "^2",
     "typescript": "^5"
   }
 }
