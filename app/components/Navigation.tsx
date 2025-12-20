@@ -6,7 +6,7 @@ import { navLinks } from "@/lib/content";
 
 const Navigation = () => {
   return (
-    <header className="fixed top-0 z-[1000] w-full backdrop-blur-lg bg-slate-950/70 border-b border-slate-800/70 shadow-[0_10px_60px_-35px_rgba(0,0,0,0.6)]">
+    <header className="fixed top-0 z-1000 w-full backdrop-blur-lg bg-slate-950/70 border-b border-slate-800/70 shadow-[0_10px_60px_-35px_rgba(0,0,0,0.6)]">
       <div
         className="absolute inset-0 opacity-60 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.25),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(14,165,233,0.25),transparent_35%)]"
         aria-hidden
