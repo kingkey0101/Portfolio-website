@@ -76,13 +76,13 @@ const Hero = () => {
               className="rounded-xl border border-slate-800/80 px-8 py-3 text-base font-semibold text-slate-100 hover:border-cyan-400/80 transition bg-slate-900/60"
             >
               Let’s Connect
-            </Link>{" "}
+            </Link>
             <Link
               href="/about"
               className="rounded-xl border border-slate-700/60 px-8 py-3 text-base font-semibold text-slate-200 hover:border-blue-400/60 hover:text-blue-300 transition bg-slate-900/40"
             >
               More about me
-            </Link>{" "}
+            </Link>
           </div>
         </motion.div>
 
