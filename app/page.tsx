@@ -6,8 +6,26 @@ import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import ContactModal from "./components/ContactModal";
+import { useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Home = () => {
+  const [contactOpen, setContactOpen] = useState(false);
+  const [toast, setToast] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
+  const toastTimer = useRef<NodeJS.Timeout | null>(null);
+  const openContact = () => setContactOpen(true);
+  const closeContact = () => setContactOpen(false);
+  const notify = (type: "success" | "error", message: string) => {
+    if (toastTimer.current) {
+      clearTimeout(toastTimer.current);
+    }
+    setToast({ type, message });
+    toastTimer.current = setTimeout(() => setToast(null), 4000);
+  };
   return (
     <div className="relative min-h-screen flex flex-col bg-slate-950 text-white overflow-hidden">
       <div
@@ -15,16 +33,48 @@ const Home = () => {
         aria-hidden
       />
 
-      <Navigation />
+      <Navigation onOpenContact={openContact} />
 
       <main className="flex-1 pt-24 relative z-10">
-        <Hero />
+        <Hero onOpenContact={openContact} />
         <Projects />
         <Skills />
-        <Contact />
+        <Contact onOpenContact={openContact} />
       </main>
 
-      <Footer />
+      <Footer onOpenContact={openContact} />
+
+      <ContactModal
+        open={contactOpen}
+        onClose={closeContact}
+        onNotify={notify}
+      />
+
+      <AnimatePresence>
+        {toast ? (
+          <motion.div
+            initial={{ opacity: 0, y: 16, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 16, scale: 0.98 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="fixed bottom-6 right-6 z-[3000] max-w-sm rounded-2xl border border-slate-800 bg-slate-900/90 px-4 py-3 shadow-xl shadow-blue-500/20"
+          >
+            <div className="flex items-start gap-3">
+              <span
+                className={`h-2.5 w-2.5 rounded-full mt-1.5 ${toast.type === "success" ? "bg-emerald-400" : "bg-amber-300"}`}
+              />
+              <div className="space-y-1">
+                <p className="text-sm font-semibold text-white">
+                  {toast.type === "success" ? "Sent" : "Error"}
+                </p>
+                <p className="text-sm text-slate-200 leading-relaxed">
+                  {toast.message}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 };

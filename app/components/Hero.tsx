@@ -2,9 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { heroStats, highlightTags } from "@/lib/content";
 
-const Hero = () => {
+type HeroProps = {
+  onOpenContact?: () => void;
+};
+
+const Hero = ({ onOpenContact }: HeroProps) => {
   return (
     <section
       id="about"
@@ -71,17 +76,18 @@ const Hero = () => {
                 View projects
               </span>
             </Link>
-            <Link
-              href="#contact"
+            <button
+              onClick={onOpenContact}
               className="rounded-xl border border-slate-800/80 px-8 py-3 text-base font-semibold text-slate-100 hover:border-cyan-400/80 transition bg-slate-900/60"
             >
               Let’s Connect
-            </Link>
+            </button>
             <Link
               href="/about"
-              className="rounded-xl border border-slate-700/60 px-8 py-3 text-base font-semibold text-slate-200 hover:border-blue-400/60 hover:text-blue-300 transition bg-slate-900/40"
+              className="group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-linear-to-r from-indigo-600 via-purple-600 to-fuchsia-600 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-purple-600/30 transition hover:scale-[1.02] hover:shadow-purple-500/40"
             >
-              More about me
+              <span>More about me</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
         </motion.div>

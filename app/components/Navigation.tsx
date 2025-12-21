@@ -4,7 +4,11 @@ import Link from "next/link";
 import { Code2 } from "lucide-react";
 import { navLinks } from "@/lib/content";
 
-const Navigation = () => {
+type NavigationProps = {
+  onOpenContact?: () => void;
+};
+
+const Navigation = ({ onOpenContact }: NavigationProps) => {
   return (
     <header className="fixed top-0 z-1000 w-full backdrop-blur-lg bg-slate-950/70 border-b border-slate-800/70 shadow-[0_10px_60px_-35px_rgba(0,0,0,0.6)]">
       <div
@@ -30,16 +34,32 @@ const Navigation = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-200">
-          {navLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href.startsWith("#") ? `/${item.href}` : item.href}
-              className="group relative inline-flex items-center gap-1 px-2 py-1 rounded-lg transition text-slate-300 hover:text-white"
-            >
-              <span className="absolute inset-x-2 bottom-0 h-px bg-linear-to-r from-transparent via-blue-400/70 to-transparent scale-x-0 group-hover:scale-x-100 origin-center transition" />
-              {item.label}
-            </Link>
-          ))}
+          {navLinks.map((item) => {
+            const isContact = item.href === "#contact";
+            if (isContact && onOpenContact) {
+              return (
+                <button
+                  key={item.href}
+                  type="button"
+                  onClick={onOpenContact}
+                  className="group relative inline-flex items-center gap-1 px-2 py-1 rounded-lg transition text-slate-300 hover:text-white"
+                >
+                  <span className="absolute inset-x-2 bottom-0 h-px bg-linear-to-r from-transparent via-blue-400/70 to-transparent scale-x-0 group-hover:scale-x-100 origin-center transition" />
+                  {item.label}
+                </button>
+              );
+            }
+            return (
+              <Link
+                key={item.href}
+                href={item.href.startsWith("#") ? `/${item.href}` : item.href}
+                className="group relative inline-flex items-center gap-1 px-2 py-1 rounded-lg transition text-slate-300 hover:text-white"
+              >
+                <span className="absolute inset-x-2 bottom-0 h-px bg-linear-to-r from-transparent via-blue-400/70 to-transparent scale-x-0 group-hover:scale-x-100 origin-center transition" />
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
         <Link

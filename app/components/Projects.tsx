@@ -15,6 +15,12 @@ const cardMotion = {
 };
 
 const Projects = () => {
+  const featuredProjects = projects.filter(
+    (p) =>
+      p.title.startsWith("Skinstric.ai") ||
+      p.title === "FlickFinder" ||
+      p.title === "Summarist",
+  );
   return (
     <section
       id="projects"
@@ -31,16 +37,10 @@ const Projects = () => {
             title="Projects"
             description="Building clean, reliable interfaces that help teams move faster — ready to make an impact in my first developer role"
           />
-          <Link
-            href="#"
-            className="inline-flex items-center gap-2 text-blue-200 hover:text-white font-semibold"
-          >
-            View all projects <ExternalLink className="w-4 h-4" />
-          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <motion.article
               key={project.title}
               {...cardMotion}
@@ -101,6 +101,15 @@ const Projects = () => {
               </div>
             </motion.article>
           ))}
+        </div>
+
+        <div className="flex justify-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 bg-linear-to-r from-blue-400 via-cyan-300 to-emerald-300 px-4 py-2 rounded-lg shadow-lg shadow-blue-500/25 border border-white/20"
+          >
+            View all projects
+          </Link>
         </div>
       </div>
     </section>

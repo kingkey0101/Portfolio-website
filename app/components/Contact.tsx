@@ -4,7 +4,11 @@ import Link from "next/link";
 import { Mail, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
-const Contact = () => {
+type ContactProps = {
+  onOpenContact?: () => void;
+};
+
+const Contact = ({ onOpenContact }: ContactProps) => {
   return (
     <section id="contact" className="py-16 px-6">
       <motion.div
@@ -16,9 +20,15 @@ const Contact = () => {
       >
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="space-y-2">
-            <p className="text-sm uppercase tracking-[0.2em] text-blue-200">Contact</p>
-            <h3 className="text-3xl font-bold text-white">Let’s build something impactful.</h3>
-            <p className="text-slate-200">Ready for new work—happy to talk scope, velocity, and outcomes.</p>
+            <p className="text-sm uppercase tracking-[0.2em] text-blue-200">
+              Contact
+            </p>
+            <h3 className="text-3xl font-bold text-white">
+              Let’s build something impactful.
+            </h3>
+            <p className="text-slate-200">
+              Ready for new work—happy to talk scope, velocity, and outcomes.
+            </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
@@ -33,6 +43,12 @@ const Contact = () => {
             >
               <Linkedin className="w-4 h-4" /> Connect
             </Link>
+            <button
+              onClick={onOpenContact}
+              className="rounded-xl border border-slate-800/80 px-5 py-3 text-sm font-semibold text-slate-100 hover:border-cyan-400/80 transition bg-slate-900/60"
+            >
+              Let’s Connect
+            </button>
           </div>
         </div>
       </motion.div>

@@ -9,8 +9,14 @@ type SectionHeadingProps = {
   align?: "left" | "center";
 };
 
-const SectionHeading = ({ eyebrow, title, description, align = "left" }: SectionHeadingProps) => {
-  const alignment = align === "center" ? "items-center text-center" : "items-start text-left";
+const SectionHeading = ({
+  eyebrow,
+  title,
+  description,
+  align = "left",
+}: SectionHeadingProps) => {
+  const alignment =
+    align === "center" ? "items-center text-center" : "items-start text-left";
 
   return (
     <motion.div
@@ -24,8 +30,14 @@ const SectionHeading = ({ eyebrow, title, description, align = "left" }: Section
         <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
         {eyebrow}
       </span>
-      <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">{title}</h2>
-      {description ? <p className="max-w-2xl text-slate-300 text-base md:text-lg">{description}</p> : null}
+      <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+        {title}
+      </h2>
+      {description ? (
+        <p className="max-w-2xl text-slate-300 text-base md:text-lg">
+          {description}
+        </p>
+      ) : null}
     </motion.div>
   );
 };

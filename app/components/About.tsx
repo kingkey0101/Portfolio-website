@@ -33,11 +33,17 @@ const About = () => {
           {/* Bio & Skills */}
           <div>
             <p className="text-lg text-slate-300 mb-6 leading-relaxed">
-              I'm a frontend developer passionate about building beautiful, performant web experiences. With expertise in React and Next.js, I create modern applications that users love. I'm detail-oriented, always learning, and committed to writing clean, maintainable code.
+              I&apos;m a frontend developer passionate about building beautiful,
+              performant web experiences. With expertise in React and Next.js, I
+              create modern applications that users love. I&apos;m
+              detail-oriented, always learning, and committed to writing clean,
+              maintainable code.
             </p>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-400">Skills</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-blue-400">
+                Skills
+              </h3>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
                   <span

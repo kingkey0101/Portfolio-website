@@ -1,37 +1,61 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
-import React from 'react';
+import { describe, it, expect, vi } from "vitest";
+import { render, screen } from "@testing-library/react";
+import React from "react";
 
 // Mock next/image for tests
-vi.mock('next/image', () => ({
-  default: (props: any) => {
+vi.mock("next/image", () => ({
+  default: (props: Record<string, unknown>) => {
     const { src, alt, ...rest } = props;
     // Render a basic img element; drop non-img props like `fill`
-    // eslint-disable-next-line jsx-a11y/alt-text
-    return <img src={src} alt={alt} {...rest} />;
+    return <img src={src as string} alt={alt as string} {...rest} />;
   },
 }));
 
 // Mock framer-motion to render children without animation overhead
-vi.mock('framer-motion', () => ({
+vi.mock("framer-motion", () => ({
   motion: {
-    div: ({ children, ...rest }: any) => <div {...rest}>{children}</div>,
+    div: ({ children, ...rest }: Record<string, unknown>) => {
+      const {
+        whileInView,
+        viewport,
+        transition,
+        variants,
+        initial,
+        animate,
+        ...cleanRest
+      } = rest;
+      return <div {...cleanRest}>{children}</div>;
+    },
   },
+  AnimatePresence: ({ children }: Record<string, unknown>) => <>{children}</>,
 }));
 
-import Home from '../app/page';
+// Mock Lucide icons - return all possible icons as generic components
+vi.mock("lucide-react", () => {
+  const IconComponent = () => <span>Icon</span>;
+  return new Proxy(
+    {},
+    {
+      get: () => IconComponent,
+    },
+  );
+});
 
-describe('Home page', () => {
-  it('renders hero content and nav anchors', () => {
+import Home from "../app/page";
+
+describe("Home page", () => {
+  it("renders hero content and nav anchors", () => {
     render(<Home />);
 
     expect(screen.getAllByText(/Frontend Engineer/i)[0]).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /^Projects$/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Skills/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Contact/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /^Projects$/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Skills/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /Contact/i })).toBeInTheDocument();
   });
 
-  it('renders featured projects section', () => {
+  it("renders featured projects section", () => {
     render(<Home />);
     expect(screen.getByText(/Featured work/i)).toBeInTheDocument();
   });
