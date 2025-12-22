@@ -97,7 +97,7 @@ const AboutPage = () => {
                 <div className="flex justify-center">
                   <div className="relative w-80 h-80 rounded-lg overflow-hidden border-2 border-blue-400/30 shadow-2xl shadow-blue-500/20">
                     <Image
-                      src="/1.jpg"
+                      src="/1.JPG"
                       alt="Keylan - Frontend Developer"
                       fill
                       className="object-cover"
