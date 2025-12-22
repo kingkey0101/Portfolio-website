@@ -24,7 +24,7 @@ vi.mock("framer-motion", () => ({
         animate,
         ...cleanRest
       } = rest;
-      return <div {...cleanRest}>{children}</div>;
+      return <div {...cleanRest}>{children as React.ReactNode}</div>;
     },
   },
   AnimatePresence: ({ children }: Record<string, unknown>) => <>{children}</>,
