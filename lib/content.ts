@@ -127,7 +127,7 @@ export const projects: Project[] = [
     description:
       "Ultraverse is a responsive NFT marketplace project developed during an internship. It focuses on exploring real-world frontend development practices: component architecture, responsive UI design, and data-driven rendering. This was an internship project.",
     impact:
-      "- Built reusable, scalable components that streamlined UI development and reduced duplicate code",
+      "Built reusable, scalable components that streamlined UI development and reduced duplicate code",
     tech: ["React", "TypeScript", "PWA", "Maps"],
     image: "/projects/ultraverseNFT.png",
     alt: "Ultraverse NFT Marketplace",
@@ -135,16 +135,16 @@ export const projects: Project[] = [
     code: "https://github.com/kingkey0101/Keylan-internship",
   },
   {
-    title: "SeaKing",
+    title: "Netflix-Clone",
     description:
-      "SeeKing is a clean, responsive full-stack Next.js web app built to help users explore and learn by getting answers from A.I. Smooth navigation, fast loading and modern UI, it demonstrates my ability to build API-driven React apps, manage routing in Next.js, and design intuitive interfaces using Tailwindcss. (Deepseek clone)",
+      "Netflix Clone is a responsive prototype replicating the Netflix login experience and grid layout. It highlights modern UI composition, responsive design, and component reusability in a simplified authentication context.  Implemented a Vite + React frontend, React Router for client routing, and Firebase Auth for secure sign‑in flows; deployed on Vercel and audited with Lighthouse.",
     impact:
-      "Delivered a fast, intuitive search experience with clean UI, responsive design, and clear result presentation.",
-    tech: ["Next.js", "TailwindCSS"],
-    image: "/projects/seaking.png",
+      "A responsive Netflix‑style authentication UI and grid with reusable modular components, client routing, and Firebase‑backed auth.",
+    tech: ["React.js", "TailwindCSS", "JavaScript"],
+    image: "/projects/netflix.png",
     alt: "SeaKing prompt",
-    live: "https://seeking-rust.vercel.app/",
-    code: "https://github.com/kingkey0101/SeeKing",
+    live: "https://netflix-clone-jet-phi.vercel.app/",
+    code: "https://github.com/kingkey0101/Netflix-Clone",
   },
 ];
 
@@ -160,7 +160,6 @@ export const skillGroups: SkillGroup[] = [
       "Shadcn/ui",
       "ChartJS",
       "Accessibility",
-      "Firebase",
       "Figma",
     ],
   },
@@ -172,7 +171,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Backend & Ops",
     accent: "text-purple-300",
-    items: ["Node/Express", "APIs & Webhooks", "CI/CD", "Clerk"],
+    items: ["Node/Express", "APIs & Webhooks", "CI/CD", "Clerk", "Firebase"],
   },
   {
     label: "AI & Data",
