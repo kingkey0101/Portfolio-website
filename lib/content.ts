@@ -154,9 +154,8 @@ export const skillGroups: SkillGroup[] = [
     accent: "text-blue-300",
     items: [
       "React/Next.js",
-      "TypeScript",
+      "JavaScript/TypeScript",
       "TailwindCSS",
-      "Design Systems",
       "Shadcn/ui",
       "ChartJS",
       "Accessibility",
@@ -171,7 +170,7 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Backend & Ops",
     accent: "text-purple-300",
-    items: ["Node/Express", "APIs & Webhooks", "CI/CD", "Clerk", "Firebase"],
+    items: ["APIs & Webhooks", "CI/CD", "Clerk", "Firebase"],
   },
   {
     label: "AI & Data",
