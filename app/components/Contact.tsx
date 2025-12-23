@@ -27,8 +27,7 @@ const Contact = ({ onOpenContact }: ContactProps) => {
               Let’s build something impactful.
             </h3>
             <p className="text-slate-200">
-              Ready for new work — eager to learn, contribute, and discuss
-              scope, pace, and outcomes.
+              Ready for new work — eager to contribute and learn.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
