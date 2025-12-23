@@ -84,7 +84,7 @@ export default function ContactModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="mx-auto mt-24 w-[95%] max-w-4xl rounded-3xl border border-slate-800 bg-slate-900/80 shadow-2xl shadow-blue-500/20 overflow-hidden"
+            className="mx-auto sm:mt-24 mt-16 w-[95%] max-w-4xl max-h-[85vh] rounded-3xl border border-slate-800 bg-slate-900/80 shadow-2xl shadow-blue-500/20 overflow-y-auto overscroll-contain"
           >
             <div className="grid grid-cols-1 md:grid-cols-2">
               {/* Left: blurb */}
@@ -112,7 +112,7 @@ export default function ContactModal({
                 </div>
               </div>
               {/* Right: form */}
-              <div className="p-8 md:p-10">
+              <div className="p-8 md:p-10 pb-12">
                 <form onSubmit={submit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import React from "react";
@@ -16,12 +17,12 @@ vi.mock("framer-motion", () => ({
   motion: {
     div: ({ children, ...rest }: Record<string, unknown>) => {
       const {
-        whileInView,
-        viewport,
-        transition,
-        variants,
-        initial,
-        animate,
+        whileInView: _whileInView,
+        viewport: _viewport,
+        transition: _transition,
+        variants: _variants,
+        initial: _initial,
+        animate: _animate,
         ...cleanRest
       } = rest;
       return <div {...cleanRest}>{children as React.ReactNode}</div>;

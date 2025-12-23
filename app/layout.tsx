@@ -14,8 +14,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Keylan King",
-  description: "Created by Keylan King",
+  metadataBase: new URL("https://keylanking.dev"),
+  title: "Keylan King — Frontend Developer",
+  description:
+    "Modern, performant web experiences built with Next.js, React, TypeScript, and Tailwind.",
+  openGraph: {
+    type: "website",
+    url: "https://keylanking.dev/",
+    title: "Keylan King — Frontend Developer",
+    description:
+      "Modern, performant web experiences built with Next.js, React, TypeScript, and Tailwind.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Keylan King — Frontend Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Keylan King — Frontend Developer",
+    description:
+      "Modern, performant web experiences built with Next.js, React, TypeScript, and Tailwind.",
+    images: ["/twitter-image.png"],
+    creator: "@keylanking",
+  },
 };
 
 export default function RootLayout({

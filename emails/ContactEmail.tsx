@@ -13,10 +13,6 @@ export default function ContactEmail({
 }: ContactEmailProps) {
   return (
     <html>
-      <head>
-        <meta charSet="utf-8" />
-        <title>New Portfolio Contact</title>
-      </head>
       <body
         style={{
           margin: 0,
