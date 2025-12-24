@@ -115,7 +115,7 @@ export const projects: Project[] = [
     description:
       "FlickFinder is a sleek, interactive movie discovery app that helps users explore trending films, search for titles, and view detailed movie information through a clean and engaging interface. Built with React and modern UI patterns, the app focuses on speed, clarity, and user‑friendly navigation, making it easy to browse and find something to watch.",
     impact:
-      "Built a responsive movie discovery interface with fast search and intuitive navigation, - Integrated external APIs with robust loading and error handling for a smooth user experience",
+      "Built a responsive movie discovery interface with fast search and intuitive navigation, Integrated external APIs with robust loading and error handling for a smooth user experience",
     tech: ["React.js", "Axios", "Tailwind", ""],
     image: "/projects/FlickFinder (2).png",
     alt: "FlickFinder movie list",
