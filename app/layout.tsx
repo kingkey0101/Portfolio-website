@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "Keylan King — Frontend Developer",
   description:
     "Modern, performant web experiences built with Next.js, React, TypeScript, and Tailwind.",
+  icons: {
+    icon: [{ url: "/kklogo.png", type: "image/png" }],
+    apple: "/kklogo.png",
+  },
   openGraph: {
     type: "website",
     url: "https://keylanking.dev/",
@@ -50,6 +54,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/kklogo.png" type="image/png" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
