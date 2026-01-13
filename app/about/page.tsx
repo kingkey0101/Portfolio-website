@@ -69,6 +69,18 @@ const AboutPage = () => {
       date: "2025",
       url: "/cert.pdf",
     },
+    {
+      title: "PHP Certification",
+      institution: "Great Learning",
+      date: "2026",
+      url: "/PHPcert.pdf",
+    },
+    {
+      title: "WordPress",
+      institution: "Simplilearn",
+      date: "2026",
+      url: "/WPcert.pdf",
+    },
   ];
 
   return (
