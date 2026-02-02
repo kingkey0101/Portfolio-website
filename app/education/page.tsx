@@ -219,7 +219,7 @@ export default function EducationPage() {
 
       <AnimatePresence>
         {contactOpen && (
-          <ContactModal onClose={closeContact} onNotify={notify} />
+          <ContactModal open={contactOpen} onClose={closeContact} onNotify={notify} />
         )}
       </AnimatePresence>
 
