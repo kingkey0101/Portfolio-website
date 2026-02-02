@@ -17,9 +17,9 @@ const cardMotion = {
 const Projects = () => {
   const featuredProjects = projects.filter(
     (p) =>
+      p.title === "MealMuse" ||
       p.title.startsWith("Skinstric.ai") ||
-      p.title === "FlickFinder" ||
-      p.title === "Summarist",
+      p.title === "FlickFinder" 
   );
   return (
     <section

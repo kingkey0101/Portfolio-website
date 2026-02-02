@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { socials } from "@/lib/content";
 
 type FooterProps = {
@@ -19,7 +20,14 @@ const Footer = ({ onOpenContact }: FooterProps) => {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
+          <Link
+            href="/education"
+            className="text-slate-300 hover:text-white font-semibold text-sm transition"
+          >
+            Education
+          </Link>
+          <div className="flex items-center gap-3">
           {socials.map((item) => {
             const isMail = item.label.toLowerCase() === "email";
             if (isMail && onOpenContact) {
@@ -47,6 +55,7 @@ const Footer = ({ onOpenContact }: FooterProps) => {
               </a>
             );
           })}
+          </div>
         </div>
 
         <p className="text-slate-500 text-sm text-center md:text-right">

@@ -33,13 +33,14 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Education", href: "/education" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const heroStats: Stat[] = [
   {
     label: "Featured projects",
-    value: "6",
+    value: "7",
     helper: "30+ builds, prototypes, and learning",
   },
   { label: "Availability", value: "Seeking new work", helper: "Full time" },
@@ -56,6 +57,27 @@ export const highlightTags = [
 ];
 
 export const projects: Project[] = [
+  {
+    title: "MealMuse",
+    description:
+      "MealMuse is a full-stack, AI-powered recipe discovery platform designed to help home cooks answer the daily question: 'What should I make for dinner?' The platform combines a clean, modern frontend with a scalable serverless backend, intelligent recipe generation, and a freemium subscription model.",
+    impact:
+      "Built an end-to-end SaaS with 125+ recipes, AI Chef chatbot (Groq Llama-3.1), recipe generation, and Stripe subscriptions. Architected serverless Lambda backend with MongoDB, integrated Spoonacular for daily recipe seeding, and designed a premium gating system.",
+    tech: [
+      "Next.js",
+      "shadcn/ui",
+      "TypeScript",
+      "AWS Lambda",
+      "MongoDB Atlas",
+      "Groq API",
+      "Stripe",
+      "Spoonacular",
+    ],
+    image: "/projects/mealmuse.png",
+    alt: "MealMuse recipe discovery",
+    live: "https://mymealmuse.com",
+    code: "https://github.com/kingkey0101/mealmuse-web",
+  },
   {
     title: "Skinstric.ai(Internship project)",
     description:
@@ -170,12 +192,23 @@ export const skillGroups: SkillGroup[] = [
   {
     label: "Backend & Ops",
     accent: "text-purple-300",
-    items: ["APIs & Webhooks", "CI/CD", "Clerk", "Firebase"],
+    items: [
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+      "AWS Lambda",
+      "AWS API Gateway",
+      "AWS CloudWatch",
+      "APIs & Webhooks",
+      "CI/CD",
+      "Clerk",
+      "Firebase",
+    ],
   },
   {
     label: "AI & Data",
     accent: "text-amber-300",
-    items: ["Prompt tooling", "Integrated AI‑assisted workflows"],
+    items: ["Prompt tooling", "Integrated AI‑assisted workflows", "Groq API"],
   },
 ];
 
