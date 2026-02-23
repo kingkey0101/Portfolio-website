@@ -44,15 +44,16 @@ const Hero = ({ onOpenContact }: HeroProps) => {
           {/* Bio */}
           <div className="space-y-5">
             <p className="uppercase tracking-[0.3em] text-xs text-slate-400">
-              Frontend Developer
+              Security‑Focused Frontend Developer
             </p>
             <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.05] text-white">
               Sharp, performant web experiences built with Next.js, React,
-              TypeScript, and a clean JavaScript stack.
+              TypeScript, and security‑first principles.
             </h1>
             <p className="text-lg text-slate-300 max-w-2xl">
-              I build fast, resilient user experiences with thoughtful design —
-              ready to contribute from day one in my first developer role
+              I build fast, secure, and resilient user experiences with thoughtful design —
+              combining frontend expertise with cybersecurity training to deliver applications
+              that are both performant and protected.
             </p>
           </div>
 
@@ -88,6 +89,25 @@ const Hero = ({ onOpenContact }: HeroProps) => {
             >
               <span>More about me</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/cybersecurity"
+              className="group inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 bg-emerald-900/20 px-8 py-3 text-base font-semibold text-emerald-300 hover:bg-emerald-900/30 hover:border-emerald-400 transition"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+              <span>Security Training</span>
             </Link>
           </div>
         </motion.div>
@@ -133,6 +153,7 @@ const Hero = ({ onOpenContact }: HeroProps) => {
                 {[
                   "Clean Code",
                   "Component Architecture",
+                  "Security‑First",
                   "Automation",
                   "Figma To Code",
                   "Accessible UI",

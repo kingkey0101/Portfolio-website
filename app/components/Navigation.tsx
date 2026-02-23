@@ -1,14 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Code2 } from "lucide-react";
+import { Code2, ChevronDown } from "lucide-react";
 import { navLinks } from "@/lib/content";
+import { useState } from "react";
 
 type NavigationProps = {
   onOpenContact?: () => void;
 };
 
 const Navigation = ({ onOpenContact }: NavigationProps) => {
+  const [resumeDropdownOpen, setResumeDropdownOpen] = useState(false);
+
   return (
     <header className="fixed top-0 z-1000 w-full backdrop-blur-lg bg-slate-950/70 border-b border-slate-800/70 shadow-[0_10px_60px_-35px_rgba(0,0,0,0.6)]">
       <div
@@ -62,13 +65,38 @@ const Navigation = ({ onOpenContact }: NavigationProps) => {
           })}
         </div>
 
-        <Link
-          href="/KeylansResume.pdf"
-          target="blank"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 bg-linear-to-r from-blue-400 via-cyan-300 to-emerald-300 px-4 py-2 rounded-lg shadow-lg shadow-blue-500/25 border border-white/20"
-        >
-          Resume
-        </Link>
+        <div className="relative">
+          <button
+            onClick={() => setResumeDropdownOpen(!resumeDropdownOpen)}
+            onBlur={() => setTimeout(() => setResumeDropdownOpen(false), 200)}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-900 bg-linear-to-r from-blue-400 via-cyan-300 to-emerald-300 px-4 py-2 rounded-lg shadow-lg shadow-blue-500/25 border border-white/20 hover:scale-105 transition"
+          >
+            Resumes
+            <ChevronDown className="w-4 h-4" />
+          </button>
+          {resumeDropdownOpen && (
+            <div className="absolute right-0 mt-2 w-64 bg-slate-900 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
+              <a
+                href="/resumes/full-stack-developer-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-3 hover:bg-slate-800 transition border-b border-slate-700"
+              >
+                <div className="text-sm font-semibold text-blue-400">Full-Stack Developer</div>
+                <div className="text-xs text-slate-400">Frontend, Backend & Cloud</div>
+              </a>
+              <a
+                href="/resumes/cybersecurity-it-support-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-4 py-3 hover:bg-slate-800 transition"
+              >
+                <div className="text-sm font-semibold text-emerald-400">Cybersecurity / IT Support</div>
+                <div className="text-xs text-slate-400">Security Analysis & Systems</div>
+              </a>
+            </div>
+          )}
+        </div>
       </nav>
     </header>
   );

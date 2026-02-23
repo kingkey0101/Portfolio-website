@@ -121,6 +121,44 @@ export default function EducationPage() {
         "Best practices for deploying and managing serverless applications on AWS.",
       url: "/certs/AWS-cert Deploying serverless applications.pdf",
     },
+    {
+      title: "IBM Cybersecurity Analyst Professional Certificate",
+      institution: "IBM via Coursera",
+      date: "In Progress",
+      description:
+        "Comprehensive program covering security fundamentals, threat intelligence, incident response, network security, and compliance frameworks.",
+    },
+    {
+      title: "Cisco Introduction to Cybersecurity",
+      institution: "Cisco Networking Academy",
+      date: "2026",
+      description:
+        "Foundational course covering cybersecurity concepts, threat landscape, risk management, and basic security principles.",
+      url: "/certs/Cisco-intro-to-cybersecurity.pdf",
+    },
+    {
+      title: "TryHackMe Pre‑Security",
+      institution: "TryHackMe",
+      date: "2026",
+      description:
+        "Hands-on learning path covering Linux fundamentals, networking basics, web application security, and introductory penetration testing.",
+      url: "/certs/THM-pre-security-certification.pdf",
+    },
+    {
+      title: "OverTheWire Bandit",
+      institution: "OverTheWire",
+      date: "2026",
+      description:
+        "Command-line security challenges focused on Linux commands, file permissions, SSH, and basic security principles through practical wargames.",
+    },
+    {
+      title: "Configure and Test Basic Network Connectivity",
+      institution: "Coursera",
+      date: "2026",
+      description:
+        "Practical course covering network configuration, connectivity testing, troubleshooting, and basic network administration tasks.",
+      url: "/certs/Coursera Configure and test basic network connectivity.pdf",
+    },
   ];
 
   const cardMotion = {

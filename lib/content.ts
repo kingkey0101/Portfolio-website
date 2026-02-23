@@ -29,10 +29,20 @@ export type SocialLink = {
   icon: LucideIcon;
 };
 
+export type CyberCert = {
+  title: string;
+  issuer: string;
+  status: "In Progress" | "Completed";
+  description: string;
+  date?: string;
+  url?: string;
+};
+
 export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Cybersecurity", href: "/cybersecurity" },
   { label: "Education", href: "/education" },
   { label: "Contact", href: "#contact" },
 ];
@@ -209,6 +219,63 @@ export const skillGroups: SkillGroup[] = [
     label: "AI & Data",
     accent: "text-amber-300",
     items: ["Prompt tooling", "Integrated AI‑assisted workflows", "Groq API"],
+  },
+  {
+    label: "Security & Systems",
+    accent: "text-emerald-300",
+    items: [
+      "Linux",
+      "SSH / SSH Keys",
+      "UFW / Fail2Ban",
+      "Bash",
+      "Networking (DNS, DHCP, TCP/IP)",
+      "Subnetting",
+      "SIEM Basics",
+      "Incident Response",
+      "Wireshark (basic)",
+      "Nmap (basic)",
+    ],
+  },
+];
+
+export const cyberCertifications: CyberCert[] = [
+  {
+    title: "IBM Cybersecurity Analyst Professional Certificate",
+    issuer: "IBM via Coursera",
+    status: "In Progress",
+    description:
+      "Comprehensive program covering security fundamentals, threat intelligence, incident response, network security, and compliance frameworks.",
+  },
+  {
+    title: "Cisco Introduction to Cybersecurity",
+    issuer: "Cisco Networking Academy",
+    status: "Completed",
+    description:
+      "Foundational course covering cybersecurity concepts, threat landscape, risk management, and basic security principles.",
+      url: '/certs/Cisco-intro-to-cybersecurity.pdf'
+  },
+  {
+    title: "TryHackMe Pre‑Security",
+    issuer: "TryHackMe",
+    status: "Completed",
+    description:
+      "Hands-on learning path covering Linux fundamentals, networking basics, web application security, and introductory penetration testing.",
+      url: '/certs/THM-pre-security-certification.pdf'
+  },
+  {
+    title: "OverTheWire Bandit",
+    issuer: "OverTheWire",
+    status: "Completed",
+    description:
+      "Command-line security challenges focused on Linux commands, file permissions, SSH, and basic security principles through practical wargames.",
+  },
+  {
+    title: "Configure and Test Basic Network Connectivity",
+    issuer: "Coursera",
+    status: "Completed",
+    description:
+      "Practical course covering network configuration, connectivity testing, troubleshooting, and basic network administration tasks.",
+      url: '/certs/Coursera Configure and test basic network connectivity.pdf'
   },
 ];
 
