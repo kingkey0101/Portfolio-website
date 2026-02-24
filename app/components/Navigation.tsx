@@ -77,7 +77,7 @@ const Navigation = ({ onOpenContact }: NavigationProps) => {
           {resumeDropdownOpen && (
             <div className="absolute right-0 mt-2 w-64 bg-slate-900 border border-slate-700 rounded-lg shadow-xl overflow-hidden z-50">
               <a
-                href="/resumes/full-stack-developer-resume.pdf"
+                href="/resumes/KeylansResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-4 py-3 hover:bg-slate-800 transition border-b border-slate-700"
@@ -86,7 +86,7 @@ const Navigation = ({ onOpenContact }: NavigationProps) => {
                 <div className="text-xs text-slate-400">Frontend, Backend & Cloud</div>
               </a>
               <a
-                href="/resumes/cybersecurity-it-support-resume.pdf"
+                href="/resumes/KeylansCybersecurityResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-4 py-3 hover:bg-slate-800 transition"
