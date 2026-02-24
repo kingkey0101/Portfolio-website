@@ -223,10 +223,16 @@ export default function EducationPage() {
                           <p className="text-sm text-cyan-400 font-medium">
                             {item.institution}
                           </p>
-                          <p className="text-xs text-slate-500 mt-1">
-                            {item.date}
-                          </p>
                         </div>
+                        <span
+                          className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold ${
+                            item.date === "In Progress"
+                              ? "bg-gradient-to-r from-blue-500/30 to-cyan-500/30 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/20 animate-pulse"
+                              : "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                          }`}
+                        >
+                          {item.date}
+                        </span>
                       </div>
                       <p className="text-slate-300 text-base leading-relaxed">
                         {item.description}

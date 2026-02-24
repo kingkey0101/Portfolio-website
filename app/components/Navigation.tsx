@@ -86,7 +86,7 @@ const Navigation = ({ onOpenContact }: NavigationProps) => {
                 <div className="text-xs text-slate-400">Frontend, Backend & Cloud</div>
               </a>
               <a
-                href="/resumes/KeylansCybersecurityResume.pdf"
+                href="/resumes/KeylanITResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block px-4 py-3 hover:bg-slate-800 transition"

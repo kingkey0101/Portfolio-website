@@ -9,8 +9,10 @@ import ContactModal from "../components/ContactModal";
 import { projects } from "@/lib/content";
 import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProjectsPage() {
+  const [imageIndexes, setImageIndexes] = useState<Record<string, number>>({});
   const [contactOpen, setContactOpen] = useState(false);
   const [toast, setToast] = useState<{
     type: "success" | "error";
@@ -23,6 +25,20 @@ export default function ProjectsPage() {
     if (toastTimer.current) clearTimeout(toastTimer.current);
     setToast({ type, message });
     toastTimer.current = setTimeout(() => setToast(null), 4000);
+  };
+  
+  const nextImage = (projectTitle: string, totalImages: number) => {
+    setImageIndexes(prev => ({
+      ...prev,
+      [projectTitle]: ((prev[projectTitle] || 0) + 1) % totalImages
+    }));
+  };
+  
+  const prevImage = (projectTitle: string, totalImages: number) => {
+    setImageIndexes(prev => ({
+      ...prev,
+      [projectTitle]: ((prev[projectTitle] || 0) - 1 + totalImages) % totalImages
+    }));
   };
   return (
     <div className="relative min-h-screen flex flex-col bg-slate-950 text-white overflow-hidden">
@@ -67,14 +83,63 @@ export default function ProjectsPage() {
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-blue-500/10 via-cyan-500/8 to-emerald-400/10"
                     aria-hidden
                   />
-                  <div className="overflow-hidden">
-                    <Image
-                      src={project.image}
-                      alt={project.alt}
-                      width={1200}
-                      height={675}
-                      className="w-full h-auto transition duration-500 group-hover:scale-[1.03]"
-                    />
+                  <div className="relative overflow-hidden">
+                    {project.images && project.images.length > 1 ? (
+                      <>
+                        <Image
+                          src={project.images[imageIndexes[project.title] || 0]}
+                          alt={`${project.alt} - Image ${(imageIndexes[project.title] || 0) + 1}`}
+                          width={1200}
+                          height={675}
+                          className="w-full h-auto transition duration-500 group-hover:scale-[1.03]"
+                        />
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            prevImage(project.title, project.images!.length);
+                          }}
+                          className="absolute left-2 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-slate-800 text-white p-2 rounded-full transition"
+                          aria-label="Previous image"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            nextImage(project.title, project.images!.length);
+                          }}
+                          className="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-slate-800 text-white p-2 rounded-full transition"
+                          aria-label="Next image"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+                        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                          {project.images.map((_, idx) => (
+                            <button
+                              key={idx}
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setImageIndexes(prev => ({ ...prev, [project.title]: idx }));
+                              }}
+                              className={`w-2 h-2 rounded-full transition ${
+                                idx === (imageIndexes[project.title] || 0)
+                                  ? "bg-blue-400 w-6"
+                                  : "bg-slate-400/50 hover:bg-slate-400"
+                              }`}
+                              aria-label={`Go to image ${idx + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Image
+                        src={project.image}
+                        alt={project.alt}
+                        width={1200}
+                        height={675}
+                        className="w-full h-auto transition duration-500 group-hover:scale-[1.03]"
+                      />
+                    )}
                   </div>
                   <div className="relative p-6 space-y-5 flex flex-col h-full">
                     <div className="space-y-3">
@@ -102,20 +167,26 @@ export default function ProjectsPage() {
                       ))}
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3 pt-2">
-                      <Link
-                        href={project.live}
-                        className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 hover:bg-blue-600 px-4 py-2 font-semibold text-slate-950 transition shadow-lg shadow-blue-500/25"
-                      >
-                        Live
-                      </Link>
-                      <Link
-                        href={project.code}
-                        className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 hover:border-blue-400 px-4 py-2 font-semibold text-white transition"
-                      >
-                        Code
-                      </Link>
-                    </div>
+                    {(project.live || project.code) && (
+                      <div className={`grid gap-3 pt-2 ${project.live && project.code ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                        {project.live && (
+                          <Link
+                            href={project.live}
+                            className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-500 hover:bg-blue-600 px-4 py-2 font-semibold text-slate-950 transition shadow-lg shadow-blue-500/25"
+                          >
+                            Live
+                          </Link>
+                        )}
+                        {project.code && (
+                          <Link
+                            href={project.code}
+                            className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 hover:border-blue-400 px-4 py-2 font-semibold text-white transition"
+                          >
+                            Code
+                          </Link>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </article>
               ))}

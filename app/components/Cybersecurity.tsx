@@ -41,10 +41,10 @@ const Cybersecurity = () => {
                     {cert.title}
                   </h3>
                   <span
-                    className={`flex-shrink-0 px-2.5 py-1 rounded-full text-xs font-medium ${
+                    className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold ${
                       cert.status === "Completed"
-                        ? "bg-emerald-500/20 text-emerald-300"
-                        : "bg-amber-500/20 text-amber-300"
+                        ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                        : "bg-gradient-to-r from-blue-500/30 to-cyan-500/30 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/20 animate-pulse"
                     }`}
                   >
                     {cert.status}

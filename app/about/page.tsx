@@ -332,10 +332,10 @@ const AboutPage = () => {
                           {item.title}
                         </p>
                         <span
-                          className={`flex-shrink-0 px-2.5 py-1 rounded-full text-xs font-medium ${
+                          className={`shrink-0 px-3 py-1.5 rounded-full text-xs font-bold ${
                             item.status === "Completed"
-                              ? "bg-emerald-500/20 text-emerald-300"
-                              : "bg-amber-500/20 text-amber-300"
+                              ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                              : "bg-gradient-to-r from-blue-500/30 to-cyan-500/30 text-cyan-300 border border-cyan-500/50 shadow-lg shadow-cyan-500/20 animate-pulse"
                           }`}
                         >
                           {item.status}
@@ -413,7 +413,7 @@ const AboutPage = () => {
                   </a>
 
                   <a
-                    href="/resumes/KeylansCybersecurityResume.pdf"
+                    href="/resumes/KeylanITResume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden bg-slate-950/40 border-2 border-emerald-500/40 rounded-xl p-6 hover:border-emerald-400 hover:bg-slate-950/60 transition-all"

@@ -12,6 +12,7 @@ export type Project = {
   impact: string;
   tech: string[];
   image: string;
+  images?: string[]; // Multiple images for carousel
   alt: string;
   live: string;
   code: string;
@@ -177,6 +178,38 @@ export const projects: Project[] = [
     alt: "SeaKing prompt",
     live: "https://netflix-clone-jet-phi.vercel.app/",
     code: "https://github.com/kingkey0101/Netflix-Clone",
+  },
+  {
+    title: "Chromebook to Kali Linux Workstation",
+    description:
+      "Converted a locked Chromebook into a hardened Kali Linux cybersecurity workstation through custom firmware installation, driver configuration, system hardening, and comprehensive security validation. This project demonstrates hands-on Linux administration, low-level hardware troubleshooting, network security implementation, and systematic debugging—core skills for IT support, system administration, and cybersecurity roles.",
+    impact:
+      "Successfully transformed restricted hardware into a fully functional security testing platform. Configured kernel modules for WiFi/Bluetooth, implemented privacy-focused DNS and VPN routing, hardened the system against telemetry and IPv6 leaks, validated firewall rules with iptables/nftables, performed packet capture analysis with tcpdump, and resolved complex systemd, APT, PATH, disk usage, and inode exhaustion issues. Demonstrated ability to troubleshoot at the kernel, network, and application layers.",
+    tech: [
+      "Kali Linux",
+      "UEFI Firmware (MrChromebox)",
+      "Bash",
+      "systemd",
+      "iptables/nftables",
+      "ProtonVPN",
+      "tcpdump",
+      "Wireshark",
+      "DNS Hardening",
+      "Kernel Modules",
+      "APT/dpkg",
+      "Hardware Debugging",
+    ],
+    image: "/projects/kali-chromebook-1.jpg",
+    images: [
+      "/projects/kali-chromebook-1.jpg",
+      "/projects/kali-chromebook-2.jpg",
+      "/projects/kali-chromebook-3.jpg",
+      "/projects/kali-chromebook-4.jpg",
+      "/projects/kali-chromebook-5.jpg",
+    ],
+    alt: "Kali Linux on Chromebook - Hardware conversion process",
+    live: "",
+    code: "",
   },
 ];
 
