@@ -260,8 +260,8 @@ const AboutPage = () => {
                 </p>
                 <p className="text-slate-300 leading-relaxed">                  When I’m not coding, I’m studying Cracking the Coding
                   Interview and Eloquent JavaScript to sharpen my fundamentals —
-                  or smoking brisket. I’m also preparing to pursue a bachelor’s
-                  degree in computer science to continue growing as an engineer.
+                  or smoking brisket. I’m also pursuing a Bachelor’s
+                  degree in Cybersecurity to continue growing as an engineer.
                 </p>
               </div>
               {/* Education */}
