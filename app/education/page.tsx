@@ -26,6 +26,14 @@ export default function EducationPage() {
 
   const educationItems = [
     {
+      title:
+        "B.S. in Cybersecurity and Information Assurance — Accepted, Expected Start: 03/2026.",
+      institution: "Western Governors University",
+      date: "Accepted",
+      description:
+        "Accepted into Western Governors University’s cybersecurity degree program with an expected start in March 2026.",
+    },
+    {
       title: "Frontend Developer Bootcamp",
       institution: "David Brag / FES Institute",
       date: "2025",

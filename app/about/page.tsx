@@ -101,6 +101,12 @@ const AboutPage = () => {
     url?: string;
   }> = [
     {
+      title:
+        "B.S. in Cybersecurity and Information Assurance — Accepted, Expected Start: 03/2026.",
+      institution: "Western Governors University",
+      date: "Accepted",
+    },
+    {
       title: "Frontend Developer Bootcamp",
       institution: "David Brag / FES Institute",
       date: "2025",
@@ -258,10 +264,9 @@ const AboutPage = () => {
                   allows me to build applications that are not only fast and intuitive, but also
                   secure and resilient.
                 </p>
-                <p className="text-slate-300 leading-relaxed">                  When I’m not coding, I’m studying Cracking the Coding
-                  Interview and Eloquent JavaScript to sharpen my fundamentals —
-                  or smoking brisket. I’m also pursuing a Bachelor’s
-                  degree in Cybersecurity to continue growing as an engineer.
+                <p className="text-slate-300 leading-relaxed">                  When I’m not coding, I’m studying to sharpen my fundamentals, playing guitar —
+                  or smoking brisket. I’ve been accepted into Western Governors
+                  University’s B.S. in Cybersecurity and Information Assurance — Expected Start: 03/2026.
                 </p>
               </div>
               {/* Education */}

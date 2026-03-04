@@ -48,7 +48,7 @@ export default function TwitterImage() {
               maxWidth: 900,
             }}
           >
-            Frontend Developer — Next.js, React, TypeScript, Tailwind
+            Security-Focused Developer — Next.js, React, TypeScript
           </div>
           <div style={{ fontSize: 22, color: "#9bd4e8" }}>keylanking.dev</div>
         </div>

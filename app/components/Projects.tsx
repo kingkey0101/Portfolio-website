@@ -22,7 +22,7 @@ const Projects = () => {
     (p) =>
       p.title === "MealMuse" ||
       p.title.startsWith("Skinstric.ai") ||
-      p.title === "FlickFinder" 
+      p.title === "Chromebook to Kali Linux Workstation" 
   );
   
   const nextImage = (projectTitle: string, totalImages: number) => {

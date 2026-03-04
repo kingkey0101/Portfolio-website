@@ -158,7 +158,8 @@ const CybersecurityPage = () => {
                   certifications from IBM and Cisco, I'm building a strong
                   foundation in network security, incident response, and system
                   administration — skills that make me a more well‑rounded and
-                  security‑conscious developer.
+                  security‑conscious developer. I’ve also been accepted into
+                  Western Governors University’s B.S. in Cybersecurity and Information Assurance —  Expected Start: 03/2026.
                 </p>
               </div>
 

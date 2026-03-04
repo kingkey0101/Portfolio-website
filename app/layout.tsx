@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://keylanking.dev"),
-  title: "Keylan King — Frontend Developer",
+  title: "Keylan King — Security-Focused Developer",
   description:
-    "Modern, performant web experiences built with Next.js, React, TypeScript, and Tailwind.",
+    "Security-Focused Developer building secure, performant web experiences with Next.js, React, and TypeScript.",
   icons: {
     icon: [{ url: "/kklogo.png", type: "image/png" }],
     apple: "/kklogo.png",
@@ -25,23 +25,23 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://keylanking.dev/",
-    title: "Keylan King — Frontend Developer",
+    title: "Keylan King — Security-Focused Developer",
     description:
-      "Modern, performant web experiences built with Next.js, React, TypeScript, and Tailwind.",
+      "Security-Focused Developer building secure, performant web experiences with Next.js, React, and TypeScript.",
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Keylan King — Frontend Developer",
+        alt: "Keylan King — Security-Focused Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Keylan King — Frontend Developer",
+    title: "Keylan King — Security-Focused Developer",
     description:
-      "Modern, performant web experiences built with Next.js, React, TypeScript, and Tailwind.",
+      "Security-Focused Developer building secure, performant web experiences with Next.js, React, and TypeScript.",
     images: ["/twitter-image.png"],
     creator: "@keylanking",
   },
